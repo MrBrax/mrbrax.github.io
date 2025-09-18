@@ -35,7 +35,7 @@ But there's no binding here, so how do you get the value the user entered? You c
 
 This way, whenever the user types something in the text entry, the `playerName` variable will be updated automatically.
 
-TextEntry also has `OnTextEdited` and `OnSubmit` events that you can use to handle text changes and form submissions.
+TextEntry also has `OnTextEdited` and `onsubmit` events that you can use to handle text changes and form submissions. From my experience, these have to be prefixed with `@` to work properly.
 
 ```razor
 <root>
