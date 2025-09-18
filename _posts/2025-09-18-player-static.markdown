@@ -47,3 +47,16 @@ You can do something like this in your UI code:
 ```
 
 This way, the UI will always display the correct information for the local player, and you don't have to worry about managing multiple UI instances or `[Property]` values.
+
+Ideally, you would also want to add some error handling or fallback UI in case `LocalPlayer` is null, to avoid any potential null reference exceptions in your UI rendering.
+
+```razor
+<root>
+    @if ( Player.LocalPlayer.IsValid() ) {
+        <span class="name">@Player.LocalPlayer.Network.Owner.DisplayName</span>
+        <span class="health">Health: @Player.LocalPlayer.Health</span>
+    } else {
+        <span class="name">No Player</span>
+        <span class="health">Health: N/A</span>
+    }
+</root>
