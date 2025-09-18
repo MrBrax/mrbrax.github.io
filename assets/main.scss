@@ -1,0 +1,167 @@
+---
+---
+
+@import "minima";
+
+// Dark theme overrides
+:root {
+  --bg-color: #1a1a1a;
+  --surface-color: #2d2d2d;
+  --text-color: #e0e0e0;
+  --text-muted: #b0b0b0;
+  --link-color: #64b5f6;
+  --link-visited: #90a4ae;
+  --link-hover: #bbdefb;
+  --border-color: #404040;
+  --code-bg: #2e2e2e;
+  --blockquote-color: #888888;
+}
+
+// Apply dark theme
+body {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}
+
+// Headers
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color) !important;
+}
+
+// Links
+a {
+  color: var(--link-color) !important;
+  
+  &:visited {
+    color: var(--link-visited) !important;
+  }
+  
+  &:hover {
+    color: var(--link-hover) !important;
+  }
+}
+
+// Code blocks
+pre, code {
+  background-color: var(--code-bg) !important;
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+// Blockquotes
+blockquote {
+  color: var(--blockquote-color) !important;
+  border-left-color: var(--border-color) !important;
+}
+
+// Header/navigation
+.site-header {
+  background-color: var(--surface-color) !important;
+  border-bottom-color: var(--border-color) !important;
+}
+
+.site-title, .site-nav .page-link {
+  color: var(--text-color) !important;
+  
+  &:hover {
+    color: var(--link-hover) !important;
+  }
+}
+
+// Footer
+.site-footer {
+  background-color: var(--surface-color) !important;
+  border-top-color: var(--border-color) !important;
+  color: var(--text-muted) !important;
+}
+
+.footer-heading {
+  color: var(--text-color) !important;
+}
+
+// Post content
+.post-content, .post-title {
+  color: var(--text-color) !important;
+}
+
+.post-meta {
+  color: var(--text-muted) !important;
+}
+
+// Highlight syntax (for code blocks)
+.highlight {
+  background-color: var(--code-bg) !important;
+  
+  .c, .c1, .cm, .cp, .cs { color: #6a737d; } // Comments
+  .k, .kd, .kn, .kp, .kr, .kt { color: #f97583; } // Keywords
+  .s, .s1, .s2, .se, .sh, .si, .sx { color: #9ecbff; } // Strings
+  .m, .mf, .mh, .mi, .mo { color: #79b8ff; } // Numbers
+  .n, .na, .nc, .nd, .ne, .nf, .nn, .no, .nt, .nv { color: #e1e4e8; } // Names
+  .o, .ow { color: #f97583; } // Operators
+  .p { color: #e1e4e8; } // Punctuation
+}
+
+// Tables (if any)
+table {
+  background-color: var(--surface-color) !important;
+  color: var(--text-color) !important;
+  
+  th, td {
+    border-color: var(--border-color) !important;
+  }
+  
+  th {
+    background-color: var(--code-bg) !important;
+  }
+}
+
+// Form elements (if any)
+input, textarea, select {
+  background-color: var(--surface-color) !important;
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+// Social media icons
+.social-media-list {
+  .username {
+    color: var(--text-color) !important;
+  }
+}
+
+// Navigation menu (mobile)
+.site-nav {
+  background-color: var(--surface-color) !important;
+}
+
+// Ensure images don't become too bright
+img {
+  opacity: 0.9;
+}
+
+// Page content wrapper
+.page-content {
+  background-color: var(--bg-color) !important;
+}
+
+// Post list items
+.post-list > li {
+  border-bottom-color: var(--border-color) !important;
+}
+
+.post-link {
+  color: var(--link-color) !important;
+  
+  &:hover {
+    color: var(--link-hover) !important;
+  }
+}
+
+// RSS subscribe link
+.rss-subscribe {
+  color: var(--text-muted) !important;
+  
+  a {
+    color: var(--link-color) !important;
+  }
+}
