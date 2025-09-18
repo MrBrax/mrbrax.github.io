@@ -1,0 +1,61 @@
+---
+layout: post
+title:  "Drag and Drop"
+date:   2025-09-19 00:40:00 +0200
+categories: sbox
+---
+
+Drag and drop is quite simple, really. You have a few events to work with, if you're working directly with a `Panel` and not a `PanelComponent`:
+
+```csharp
+// called when you start dragging
+// i like to create a "ghost" element here to represent the thing i'm dragging
+protected override void OnDragStart( DragEvent dragEvent )
+{
+}
+
+// called when you stop dragging
+// you can clean up your "ghost" element here
+// this is also where you'd handle dropping the item
+protected override void OnDragEnd( DragEvent dragEvent )
+{
+}
+
+// called while you're dragging, on every movement
+// you can update the position of your "ghost" element here
+protected override void OnDrag( DragEvent dragEvent )
+{
+}
+```
+
+To allow dragging in the first place, you need to override `WantsDrag`:
+
+```csharp
+public override bool WantsDrag => true;
+```
+
+If you spawn a "ghost" element to represent the thing you're dragging, you can position it inside the `OnDrag` method with this calculation:
+
+```csharp
+_ghost.Style.Top = (dragEvent.ScreenPosition.y - dragEvent.LocalGrabPosition.y) * ScaleFromScreen;
+
+_ghost.Style.Left = (dragEvent.ScreenPosition.x - dragEvent.LocalGrabPosition.x) * ScaleFromScreen;
+```
+
+To handle dropping the item onto another panel, there are a couple of ways to do it. This is the way I do it, but I think there is a built in method to handle this now that I haven't tried yet.
+
+In the `OnDragEnd` method, you can query all the panels under the mouse position like this:
+
+```csharp
+var characterPreview = FindRootPanel()
+    .Descendants
+    .OfType<CharacterPreview>()
+	.FirstOrDefault( x => x.IsInside( dragEvent.ScreenPosition ) );
+
+if ( characterPreview.IsValid() )
+{
+    // dropped on a valid CharacterPreview panel
+}
+```
+
+If you know where that official method was, please let me know!
