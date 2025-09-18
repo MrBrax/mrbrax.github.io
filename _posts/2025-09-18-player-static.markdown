@@ -60,3 +60,4 @@ Ideally, you would also want to add some error handling or fallback UI in case `
         <span class="health">Health: N/A</span>
     }
 </root>
+```
