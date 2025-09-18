@@ -10,7 +10,7 @@ Conic gradients are a type of gradient that radiates from a central point, creat
 ![Inventory slot conic gradient](/assets/conic-gradient.png)
 
 
-```html
+```blazor
 <div class="cooldown-bar">
     <div class="cooldown-bar-fill" style="background-image: conic-gradient(
         #0095ff 0%,
@@ -21,7 +21,7 @@ Conic gradients are a type of gradient that radiates from a central point, creat
 </div>
 ````
 
-GetCooldown()` returns a value between 0 and 1, which represents the percentage of the cooldown that has elapsed. I multiply it by 100 to convert it to a percentage for the CSS.
+`GetCooldown()` returns a value between 0 and 1, which represents the percentage of the cooldown that has elapsed. I multiply it by 100 to convert it to a percentage for the CSS.
 
 
 ```scss
@@ -32,14 +32,15 @@ GetCooldown()` returns a value between 0 and 1, which represents the percentage 
 
     width: 25px;
     height: 25px;
+
     background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 100%;
+    border-radius: 100%; // fully circular
 
     .cooldown-bar-fill {
         flex-shrink: 0;
         width: 25px;
         height: 25px;
-        border-radius: 100%;
+        border-radius: 100%; // fully circular
     }
 
 }
