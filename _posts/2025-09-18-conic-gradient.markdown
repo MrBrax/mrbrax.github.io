@@ -7,7 +7,7 @@ categories: sbox
 
 Conic gradients are a type of gradient that radiates from a central point, creating a circular pattern. I use them in my game to visualize the cooldown of items in the inventory.
 
-![](conic-gradient.png)
+![Inventory slot conic gradient](/assets/conic-gradient.png)
 
 
 ```html
