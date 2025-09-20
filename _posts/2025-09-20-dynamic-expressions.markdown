@@ -9,13 +9,13 @@ Dynamic expressions are a Source 2 feature that allows you to add inline express
 
 Note: This cannot be done with cloud or compiled materials with no access to the source .vmat file.
 
-Add a dynamic expression to a material parameter by clicking the little arrow next to the parameter name in the material editor, and selecting "Dynamic Expression".
+Add a dynamic expression to a material parameter by clicking the little arrow next to the parameter name in the material editor, and selecting "Add Dynamic Expression...".
 
 ![Dynamic Expression](/assets/dynamic-expressions-add.png)
 
 For a simple flicker effect, you can use the `time` expression.
 
-```
+```glsl
 3 + (sin(time * 60) * 0.7)
 ```
 
