@@ -31,4 +31,4 @@ modelRenderer.Attributes.Set("myVariable", Time.Now);
 
 You can now do anything you want with that variable in C#, such as animating it over time or setting it based on game logic.
 
-Note: Make sure to check out the batchable post if you're using dynamic expressions on multiple instances of the same model, as you'll need to disable batching to have unique values per instance: {% post_url 2025-09-18-batchable %}.
+Note: Make sure to check out the batchable post if you're using dynamic expressions on multiple instances of the same model, as you'll need to disable batching to have unique values per instance: <a href="{% post_url 2025-09-18-batchable %}">Batchable Post</a>.
