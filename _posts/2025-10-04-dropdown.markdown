@@ -1,0 +1,55 @@
+---
+layout: post
+title:  "Dropdown"
+date:   2025-10-04 16:55:04 +0200
+categories: sbox
+---
+
+DropDown is very similar to how `select` works in HTML. You can create a dropdown menu with multiple options, and the user can select one of them, with an automatic popup.
+
+I would advise to not write the semantic html `select` tag with `option` tags, since I've found that to break very easily.
+
+Different from `TextEntry`, `DropDown`'s Value property is an `object` type, since it can hold any type of value and not just a string. You can use the `Value:bind` attribute to bind the selected value to a variable in your code like `Value:bind=@selectedOption`.
+
+`Options` on the `DropDown` is the list of options that will be displayed in the dropdown menu. It uses its own type called `Option` - `Sandbox.UI.Option`. Check the source code for more details.
+
+In one of my use cases, I have a list of players:
+
+```csharp
+private List<Option> Players => BraxnetPlayer.All.Select( x => new Option
+	{
+		Title = x.DisplayName, Value = x.SteamId.ToString()
+	} ).ToList();
+
+private string selectedPlayer { get; set; }
+
+```
+
+You can see that I create a list of `Option` objects, where each option has a `Title` (the text displayed in the dropdown) and a `Value` (the actual value associated with that option).
+
+Then, in the UI, I can use the `DropDown` component like this:
+
+```razor
+<DropDown Options=@Players Value:bind=@selectedPlayer />
+```
+
+You can use `ValueChanged` to execute some code when the selected value changes:
+
+```razor
+<DropDown Options=@Players Value:bind=@selectedPlayer ValueChanged=@OnPlayerChanged />
+```
+
+```csharp
+private void OnPlayerChanged(string newPlayer)
+{
+    // Handle the player change
+}
+```
+
+Use `Value` to set the initial selected value:
+
+```razor
+<DropDown Options=@Players Value=@selectedPlayer />
+```
+
+The `Selected` property gives you the currently selected `Option` object, which can be useful if you need to access more details about the selected option.
