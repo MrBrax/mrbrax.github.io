@@ -22,7 +22,6 @@ private List<Option> Players => BraxnetPlayer.All.Select( x => new Option
 	} ).ToList();
 
 private string selectedPlayer { get; set; }
-
 ```
 
 You can see that I create a list of `Option` objects, where each option has a `Title` (the text displayed in the dropdown) and a `Value` (the actual value associated with that option).
