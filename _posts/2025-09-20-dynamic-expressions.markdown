@@ -5,6 +5,8 @@ date:   2025-09-20 15:10:00 +0200
 categories: sbox
 ---
 
+**Note: As of 2025-10-22, dynamic expressions have been completely removed from the engine.**
+
 Dynamic expressions are a Source 2 feature that allows you to add inline expressions to material parameters. This is useful for a variety of things, such as animating parameters over time, or passing in values from code.
 
 Note: This cannot be done with cloud or compiled materials with no access to the source .vmat file.
