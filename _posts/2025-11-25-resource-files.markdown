@@ -15,4 +15,6 @@ By "wildcards", it means you can use patterns like `*.png` to include all PNG fi
 
 `images/*.png` will include all PNG files in the "images" folder.
 
+**Do NOT include "assets" at the start of the path**, as the engine automatically looks for resources in the "assets" directory of your project.
+
 After saving your settings, publish your game again, and the specified resource files should now be included in the build.
