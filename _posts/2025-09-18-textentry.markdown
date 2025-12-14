@@ -9,8 +9,8 @@ If you've done HTML forms before, you might be familiar with the `<input>` eleme
 
 ```razor
 <root>
-    <TextEntry Value="playerName" Placeholder="Enter your name" />
-    <button @onclick="SubmitName">Submit</button>
+    <TextEntry Value=@playerName Placeholder="Enter your name" />
+    <button @onclick=@SubmitName>Submit</button>
 </root>
 ```
 
@@ -18,8 +18,8 @@ But there's no binding here, so how do you get the value the user entered? You c
 
 ```razor
 <root>
-    <TextEntry Value:bind="playerName" Placeholder="Enter your name" />
-    <button @onclick="SubmitName">Submit</button>
+    <TextEntry Value:bind=@playerName Placeholder="Enter your name" />
+    <button @onclick=@SubmitName>Submit</button>
 </root>
 
 @code {
@@ -39,9 +39,9 @@ TextEntry also has `OnTextEdited` and `onsubmit` events that you can use to hand
 
 ```razor
 <root>
-    <TextEntry Value:bind="playerName" Placeholder="Enter your name" 
-               @OnTextEdited="HandleTextEdited" 
-               @onsubmit="HandleSubmit" />
+    <TextEntry Value:bind=@playerName Placeholder="Enter your name" 
+               @OnTextEdited=@HandleTextEdited
+               @onsubmit=@HandleSubmit />
 </root>
 
 @code {
