@@ -34,7 +34,7 @@ public class ViewModelComponent : Component
 ```
 
 ```csharp
-ViewModelComponent.Weapon.Set("b_attack", true);
+ViewModelGameObject.GetComponent<ViewModelComponent>().Weapon.Set("b_attack", true);
 ```
 
 The [official docs page on viewmodels](https://sbox.game/dev/doc/assets/ready-to-use-assets/first-person-weapons/) has more information from here on, like the available parameters. You can also find all the parameters if you open the `Parameters` group on the `SkinnedModelRenderer` component in the editor.
