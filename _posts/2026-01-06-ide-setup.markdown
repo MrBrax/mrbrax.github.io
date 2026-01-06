@@ -29,8 +29,8 @@ Even if you follow the steps below, Visual Studio Code might still not work perf
 
 1. Make sure you have the latest version of [Visual Studio Code](https://code.visualstudio.com/download) installed.
 2. Install the latest [.NET SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) as well. At the time of writing, s&box uses .NET 10. You may need to download both the SDK and the Runtime.
-3. Install the `C#` and `C# Dev Kit` extensions from the Visual Studio Code marketplace.
-4. Open the project folder in Visual Studio Code.
+3. Install the `C#` and `C# Dev Kit` extensions from the extensions tab.
+4. Open your s&box project folder in Visual Studio Code using `File -> Open Folder...`. Do not open the `code` folder, you want to open the root project folder.
 5. If the solution file (`.slnx`) does not open automatically, open it manually from the dropdown in the bottom left corner of the window.
 
 ### Common Issues
