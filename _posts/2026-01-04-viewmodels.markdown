@@ -19,6 +19,8 @@ Next, you'll want to add another `SkinnedModelRenderer` for the hands/arms model
 
 On the `SkinnedModelRenderer` for the arms, make sure to set the `Bone Merge Target` to the weapon's `SkinnedModelRenderer`. This will ensure that the arms animate correctly with the weapon.
 
+Do *NOT* bone merge the weapon to the arms - it has to be the other way around. Arms to weapon.
+
 ![Bone Merge Target](/assets/viewmodel/2026-01-04%2016.05.44.png)
 
 Spawning this prefab as a child of the camera will give you a basic viewmodel setup.
