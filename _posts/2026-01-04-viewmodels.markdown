@@ -7,7 +7,9 @@ categories: sbox
 
 Facepunch has some free to use viewmodels available in the cloud browser. They're separated into a weapon model and a hands/arms model.
 
-Create a new prefab for your viewmodel - this is my preferred way to set up viewmodels, as you can easily tweak and test them in the editor before using them in code, adjusting fingers, positions, etc.
+Create a new prefab for your viewmodel - this is my preferred way to set up viewmodels, as you can easily tweak and test them in the editor before using them in code, adjusting fingers, positions, etc. 
+
+*Tip: You could have either a `Weapon` GameResource and put the prefab there to clone it in when equipping, or have a virtual property on the weapon component that spawns the prefab when the weapon is equipped.*
 
 You can start by adding a `SkinnedModelRenderer` to your viewmodel prefab, and then assigning the weapon model to it. Make sure it's a viewmodel and not a world model, as the latter has no animations.
 
@@ -24,6 +26,8 @@ Do *NOT* bone merge the weapon to the arms - it has to be the other way around. 
 ![Bone Merge Target](/assets/viewmodel/2026-01-04%2016.05.44.png)
 
 Spawning this prefab as a child of the camera will give you a basic viewmodel setup.
+
+*I originally tried to update the viewmodel position in OnUpdate, but this caused jittering. I'm pretty sure this is because the camera position is updated after OnUpdate, so parenting the viewmodel to the camera and resetting its local position works better.*
 
 Accessing the `SkinnedModelRenderer` weapon component in code allows you to play animations on it. You use the `Set` method with the name of the animation you want to play. How you want to access the weapon and hands renderers is up to you - you could have a `ViewModel` component that holds references to them like I have.
 
