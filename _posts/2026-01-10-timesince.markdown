@@ -40,6 +40,8 @@ To me at least, that code looks horrible compared to using TimeSince or TimeUnti
 
 TimeSince is a struct that represents the time elapsed since a certain event. It is commonly used to track cooldowns, delays, or intervals between actions. First seen in [Garry's Blog](https://garry.net/posts/timesince/).
 
+Of note is that TimeSince is affected by time scaling, so if you change the scene time scale, TimeSince will reflect that change.
+
 ### Basic Usage
 
 ```csharp
@@ -84,6 +86,8 @@ float seconds = timeSinceEvent; // Implicitly converts to float
 
 TimeUntil is a struct that represents the time remaining until a certain event occurs. It is useful for countdowns, timers, or scheduling future actions, where you want to be able to set a time on it instead of just measuring time since an event.
 
+Of note is that TimeUntil is affected by time scaling, so if you change the scene time scale, TimeUntil will reflect that change.
+
 ### Basic Usage
 
 ```csharp
@@ -106,3 +110,15 @@ private void Punch()
 ```
 
 You could call `Punch()` every frame, but it will only actually punch when the cooldown has expired. Notice how the implicit conversion to bool works here - it returns true if the TimeUntil has expired, and you can set it directly to a float value representing seconds until the event.
+
+## RealTimeSince
+
+[RealTimeSince Documentation](https://sbox.game/api/Sandbox.RealTimeSince)
+
+Same as TimeSince, but uses real time instead of scaled time. This means that it is not affected by time scaling, and will always measure time based on real-world seconds.
+
+## RealTimeUntil
+
+[RealTimeUntil Documentation](https://sbox.game/api/Sandbox.RealTimeUntil)
+
+Same as TimeUntil, but uses real time instead of scaled time. This means that it is not affected by time scaling, and will always measure time based on real-world seconds.
