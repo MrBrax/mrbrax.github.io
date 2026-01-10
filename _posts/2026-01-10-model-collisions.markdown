@@ -31,7 +31,7 @@ In ModelDoc in s&box, in your existing model asset, right click in the outliner 
 
 ![Model and Collision Mesh](/assets/modelcollisions/2026-01-10%2015.48.44.png)
 
-It might not look like your collision mesh yet, notice how the faces are not aligned properly to your expertly crafted mesh. You need to configure it.
+It might not look like your collision mesh yet. Notice how the faces are not aligned properly to your expertly crafted mesh. You need to configure it.
 
 ## Step 4: Configure Collision Meshes
 
@@ -48,7 +48,7 @@ You should now see the collision mesh overlaid on your model. Compile and save.
 
 ## Step 5: Test Collisions
 
-Add the model to your scene by dragging it from the asset browser into the scene, or add a `ModelRenderer`, ad `ModelCollider`, and a `RigidBody` component to a GameObject and configure them to use your model.
+Add the model to your scene by dragging it from the asset browser into the scene, or add a `ModelRenderer`, a `ModelCollider`, and a `RigidBody` component to a GameObject and configure them to use your model.
 
 ### Is the model falling through the floor?
 You might have accidentally chosen `PhysicsMeshFile` instead of `PhysicsHullFile` in Step 3. `PhysicsMeshFile` uses a non-convex mesh collider, which is not supported for dynamic objects. It's fine if you want a static object to have a non-convex collider, but for anything that moves, you need to use convex colliders.
