@@ -18,4 +18,6 @@ By "wildcards", it means you can use patterns like `*.png` to include all PNG fi
 
 **Do NOT include "assets" at the start of the path**, as the engine automatically looks for resources in the "assets" directory of your project.
 
+**Do NOT include "materials/\*" or "models/\*"** and the like, as the engine automatically uploads all compiled resource (extension ending in _c). If you use a wildcard to also upload the source files (without _c), it may cause issues on clients, as they will try to load the source files instead of the compiled versions. If you only need to include specific uncompiled resources, you can add them individually like `materials/my_image.png`.
+
 After saving your settings, publish your game again, and the specified resource files should now be included in the build.
