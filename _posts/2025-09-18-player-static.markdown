@@ -14,13 +14,13 @@ public class Player : Component
 
     public static Player LocalPlayer { get; private set; }
 
-    public override void OnStart() {
+    protected override void OnStart() {
         if ( !IsProxy ) {
             LocalPlayer = this;
         }
     }
 
-    public override void OnDestroyed() {
+    protected override void OnDestroy() {
         if ( LocalPlayer == this ) {
             LocalPlayer = null;
         }
